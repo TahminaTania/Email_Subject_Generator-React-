@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background: linear-gradient(to bottom, rgb(126, 31, 214) 0%,rgb(206, 176, 235) 50%,#f7f7f7 65%,white 50%,rgb(255, 255, 255) 100%); /* W3C */
+
+}
+.label{
+    font-weight: bolder;
+}
+.G_btn{
+   float: right;
+   margin-top: 5px;
+}
+.btn-primary{
+    background-color: rgb(137, 2, 190);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#output{
+    margin-top: 90px;
+}
+inp{
+    font-weight: bolder;
+    color:black;
+}
+.copy{
+    float: right;
+    padding:0 5px;
+    background-color:white;
+    color:rgb(126, 31, 214);
+    cursor: pointer;
+    /* margin-top: 5px; */
+}

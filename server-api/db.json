@@ -1,0 +1,13 @@
+{
+    "subjects":[
+        {
+            "id": 1,
+            "word": "This is first One "
+        },
+        {
+            "id": 2,
+            "word": "This is second One "
+        }
+
+    ]
+}
