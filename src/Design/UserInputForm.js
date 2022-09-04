@@ -1,64 +1,68 @@
 import React from 'react';
 import classes from './UserInputForm.module.css';
 import { useState } from 'react';
+import Output from './Output';
 
-export default function UserInputForm() {
-  const [keyword,SetKeyWord] =useState('');
-  const [cetagory,SetCetagory] =useState('');
 
-  let keyWord =(event)=>{
-    console.log('keyWord function ran');
-    event.preventDefault();
-    // SetKeyWord(event.target.value);
+export default function UserInputForm(props) {
+  const [keyword,SetKeyWord] =useState();
+  const [cetagory,SetCetagory] =useState();
 
+  let Sentences =(e)=>{
+    e.preventDefault();
+    SetCetagory(e.target.value)
     console.log('chatagory is:', cetagory);
-   // SetCetagory('');
-    
     console.log('value is:', keyword);
-    // SetKeyWord('');
+  }
 
+  function handleCategory(e) {
+    SetCetagory(e.target.value);
+    console.log(cetagory)
   }
 
 
   return (
     <div>
-        <form onSubmit={keyword}> 
-            <div class="row">
+        <div className="col-md-10 offset-1">
+            <h6>Fill up those things</h6>
+            <form onSubmit={keyword}> 
+                <div className="row">
             
-                <div class="col-md-4">
-                <label class="form-label mt-4">Choose Category</label> 
-                <select class="form-select" aria-label="Default select example" name="category" 
-                onChange={(event) => this.SetCetagory({ value: event.target.value })}
-               >
-                    <option value="1">Benefit</option>
-                    <option value="2">Pin Point</option>
-                    <option selected value="3">Topic</option>
-                    <option value="4">Necessity</option>
-                </select>
-                </div>
+                      <div className="col-md-4">
+                        <label className="form-label mt-4">Choose Category</label> 
+                          <select className="form-select" defaultValue={cetagory} onChange={handleCategory} >
+                            <option value="0">Topic</option>
+                            <option value="1">Benefit</option>
+                            <option value="2">Pin Point</option>
+                            <option value="3">Necessity</option>
+                            </select>
+                        </div>
 
-                <div class="col-md-2">
-                    
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label mt-4">Enter KeyWord</label> 
-                  <input type="text" class="form-control"  placeholder="Lead-generation"  
-                  onChange={event => SetKeyWord(event.target.value)}
-                  value={keyword}
-                 /> 
-                   
-                </div>
-                <div class="col-md-2">
-                <div className='mt-5'></div> 
-                <button class="btn btn-primary btn"  onClick={keyWord} >Generate</button>
-                </div>
-            </div>
-       
+                        <div className="col-md-2"></div>
+                        <div className="col-md-4">
+                          <label className="form-label mt-4">Enter KeyWord</label> 
+                          <input type="text" className="form-control"  placeholder="Lead-generation"  
+                          onChange={(e) => SetKeyWord(e.target.value)}
+                          value={keyword}/> 
+                        </div>
+                        <div className="col-md-2">
+                          <div className='mt-5'></div> 
+                          <button className="btn btn-primary btn"  onClick={Sentences} >Generate</button>
+                        </div>
+                     </div>
+                 
+              </form>
 
-        <div>
-            
+
+
+
         </div>
-        </form>
+        <div className='mb-5'>
+        </div>
+        <div className='col-md-8 offset-2 mt-5'>
+          <Output keyword={keyword} cetagory={cetagory}/>
+        </div>
+
     </div>
   )
 }

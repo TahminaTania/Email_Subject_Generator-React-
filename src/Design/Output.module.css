@@ -19,3 +19,9 @@
     cursor: pointer;
     /* margin-top: 5px; */
 }
+.copy button{
+    background-color:white;
+    color:rgb(126, 31, 214);
+    font-weight: bold;
+    border: none;
+}

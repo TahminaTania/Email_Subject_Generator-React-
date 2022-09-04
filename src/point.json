@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "word": "This is first {} Point"
+    },
+    {
+        "id": 2,
+        "word": "This is second {} Point"
+    }
+]
