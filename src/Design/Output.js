@@ -24,12 +24,12 @@ export default function Output({cetagory ,keyword}) {
 }
   }, [cetagory]);
 
-  // topic.map( (tpc) => {
-  //   let string = tpc.word;
-  //   let Word = string.replace("{}",keyword);
-  //   tpc.word=Word;
-  //   console.log("Replaced value: ", Word)
-  // })
+  topic.map( (tpc) => {
+    let string = tpc.word;
+    let Word = string.replace("{}",keyword);
+    tpc.word=Word;
+    console.log("Replaced value: ", Word)
+  })
 
 
 
