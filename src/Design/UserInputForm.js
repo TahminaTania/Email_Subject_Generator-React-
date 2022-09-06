@@ -1,27 +1,32 @@
 import React from 'react';
 import classes from './UserInputForm.module.css';
-import { useState } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import Output from './Output';
-
-import benefits from '../db.json';
-import Necessity from '../necessity.json';
-import point from '../point.json';
-
+import { Point,Benefit, Necessity } from './data';
 
 
 
 export default function UserInputForm(props) {
   const [keyword,SetKeyWord] =useState();
-  const [cetagory,SetCetagory] =useState(benefits);
+  const [cetagory,SetCetagory] =useState(Point);
 
   let Sentences =(e)=>{
-    e.preventDefault();
-    if(cetagory=== '2'){
-      SetCetagory(point)
+    e.preventDefault(); 
+        // console.log('chatagory value is:', cetagory);
+        //console.log('Sentence value is:', keyword);
+
+          // if(cetagory=== 'Benefit'){
+          //   SetCetagory(Benefit)
+          // }
+          // else if(cetagory=== 'Necessity'){
+          //   SetCetagory(Necessity)
+          // }
+          // else{
+          //   SetCetagory(Point)
+          // }
+
+
     }
-   // console.log('chatagory value is:', cetagory);
-    //console.log('Sentence value is:', keyword);
-  }
 
   // function handleCategory(e) {
   //   SetCetagory(e.target.value);
@@ -43,11 +48,11 @@ export default function UserInputForm(props) {
             
                       <div className="col-md-4">
                         <label className="form-label mt-4">Choose Category</label> 
-                          <select className="form-select" defaultValue={cetagory} onChange={(e) => SetCetagory(e.target.value)} >
+                          <select className="form-select" value={cetagory} onChange={(e) => SetCetagory(e.target.value)} >
                             <option value="0">Topic</option>
-                            <option value="1">Benefit</option>
-                            <option value="2">Pin Point</option>
-                            <option value="3">Necessity</option>
+                            <option value="Benefit">Benefit</option>
+                            <option value="Point">Pin Point</option>
+                            <option value="Necessity">Necessity</option>
                             </select>
                         </div>
 

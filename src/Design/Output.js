@@ -3,28 +3,33 @@ import classes from './Output.module.css';
 import id from './Output.module.css';
 import UserInputForm from './UserInputForm';
 import { useState, useEffect,useRef } from 'react';
+import { Point,Benefit, Necessity } from './data';
 
 export default function Output({cetagory ,keyword}) {
-  // const [topic,SetTopic] =useState(point);
+  const [topic,SetTopic] =useState(Point);
 
   console.log("Recieved keyword: ",keyword)
   console.log("Recieved category: ",cetagory)
+  
 
-//   useEffect(() => {
-//     if(cetagory=== '1'){
-//       SetTopic(benefits)
-//       // console.log("useeffect value: ", topic[1].word)
-//       // let string = topic[1].word;
-//       // const Word = string.replace("{}",keyword);
-//       // console.log("Replaced value: ", Word)
-//     }
-//     else if(cetagory=== '3'){
-//       SetTopic(Necessity)
-//     }
-//     else{
-//       SetTopic(point)
-// }
-//   }, [cetagory]);
+  useEffect(() => {
+    if(cetagory=== 'Benefit'){
+      SetTopic(Benefit)
+    }
+    else if(cetagory=== 'Necessity'){
+      SetTopic(Necessity)
+    }
+    else if(cetagory=== 'Point'){
+      SetTopic(Point)
+}
+  }, [cetagory]);
+
+  // topic.map( (tpc) => {
+  //   let string = tpc.word;
+  //   let Word = string.replace("{}",keyword);
+  //   tpc.word=Word;
+  //   console.log("Replaced value: ", Word)
+  // })
 
 
 
@@ -33,25 +38,37 @@ export default function Output({cetagory ,keyword}) {
          <div className='container'>
            
               <div>
-                    {
-                      cetagory.map( sub => {
-                        let string = sub.word;
-                        const Word = string.replace("{}",keyword);
-                        sub.word=Word
-                       return(
-                      <div  className='text-center' id={id.title}> 
-                        <span key={sub.id}>{sub.word}</span>
-                        <span className={classes.copy} >
-                          <button >Copy</button>
-                        </span>
+                  {topic.map( sub => {
 
-                      </div>
-                      )
-                        })
-                    }
+                    return(
+                   <div  className='text-center' id={id.title}> 
+                     <span key={sub.id}>{sub.word}</span>
+                     <span className={classes.copy} >
+                       <button >Copy</button>
+                     </span>
+                  
+                   </div>
+                   )
+                     })
+                  }
+                
               </div>
             </div>
 
     </div>
   )
 }
+
+
+// {cetagory.map( sub => {
+//   return(
+//  <div  className='text-center' id={id.title}> 
+//    <span key={sub.id}>{sub.word}</span>
+//    <span className={classes.copy} >
+//      <button >Copy</button>
+//    </span>
+
+//  </div>
+//  )
+//    })
+// }
