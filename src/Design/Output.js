@@ -7,6 +7,7 @@ import { Point,Benefit, Necessity } from './data';
 
 export default function Output({cetagory ,keyword}) {
   const [topic,SetTopic] =useState(Point);
+  const [color,Setcolor] =useState('red');
 
   console.log("Recieved keyword: ",keyword)
   console.log("Recieved category: ",cetagory)
@@ -24,12 +25,26 @@ export default function Output({cetagory ,keyword}) {
 }
   }, [cetagory]);
 
+  // useEffect((e) => {
+  //   topic.map(topic => {
+    
+  //     const string = topic.word;
+  //     // let Word = string.replace(`{}`,keyword);
+  //     const newText = string.replace( `{}`, `<span className={classes.repalced_word}>${keyword}</span>`
+  //        );
+  //     topic.word=newText;
+  //     console.log("Replaced value: ", newText)
+  //   });
+
+  // },[keyword]);
+
   topic.map( (tpc) => {
     let string = tpc.word;
-    let Word = string.replace("{}",keyword);
+    let Word = string.replace(`{}`,keyword);
     tpc.word=Word;
     console.log("Replaced value: ", Word)
   })
+
 
 
 

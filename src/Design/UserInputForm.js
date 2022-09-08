@@ -9,9 +9,14 @@ import { Point,Benefit, Necessity } from './data';
 export default function UserInputForm(props) {
   const [keyword,SetKeyWord] =useState();
   const [cetagory,SetCetagory] =useState(Point);
+  const [color,Setcolor] =useState('red');
+
+
 
   let Sentences =(e)=>{
     e.preventDefault(); 
+    //  SetCetagory(cetagory);
+     
         // console.log('chatagory value is:', cetagory);
         //console.log('Sentence value is:', keyword);
 
