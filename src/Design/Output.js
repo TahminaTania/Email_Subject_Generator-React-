@@ -54,6 +54,9 @@ function loadMore(){
     SetNB(topic.length-3);
     SetN(topic.length);
    console.log("3one")
+  }else{
+    SetN(Num+3)
+    SetNB(NumB+3)
   }
 
 console.log(NumB)
