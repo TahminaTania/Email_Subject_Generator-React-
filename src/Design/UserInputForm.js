@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './UserInputForm.module.css';
-import { useState,useEffect,useRef } from 'react';
+import { useState,useEffect,useRef} from 'react';
 import Output from './Output';
 import { Point,Benefit, Necessity } from './data';
 import SimpleSlider from './Output';
@@ -8,9 +8,12 @@ import SimpleSlider from './Output';
 
 
 export default function UserInputForm(props) {
+  const [userInput,SetInput] =useState();
   const [keyword,SetKeyWord] =useState();
   const [cetagory,SetCetagory] =useState('');
-  const [color,Setcolor] =useState('red');
+  
+  const inputRef = useRef(null);
+ 
  
   
   
@@ -20,13 +23,9 @@ export default function UserInputForm(props) {
 
   let Sentences =(e)=>{
     e.preventDefault();
-
-        //  console.log('chatagory value is:', cetagory);
-        //  console.log('Sentence value is:', keyword);
-
-  
-
-
+    // SetKeyWord(userInput)
+     SetKeyWord(inputRef.current.value)
+     console.log('Sentence value is:', keyword);
     }
 
   // function handleCategory(e) {
@@ -63,13 +62,20 @@ export default function UserInputForm(props) {
                         <div className="col-md-4">
                           <label className="form-label mt-4">Enter KeyWord</label> 
                           <input type="text" className="form-control"  placeholder="Lead-generation"  
-                          onChange={(e) => SetKeyWord(e.target.value)}
-                          value={keyword}
+                         // onChange={(e) => SetInput(e.target.value)}
+                          //value={userInput}
+                          ref={inputRef}
+                          id="message"
+                          name="message"
+                          autoComplete="off"
                           /> 
                         </div>
                         <div className="col-md-2">
-                          <div className='mt-5'></div> 
-                          <button type="submit" className="btn btn-primary btn"  onClick={Sentences} >Generate</button>
+                          <div className='mt-5'></div>
+                          <div className={classes.sbmtBtn}>
+                            <button type="submit" className="btn btn-primary btn"  onClick={Sentences} >Generate</button>
+                          </div>
+                          
                         </div>
                      </div>
                  

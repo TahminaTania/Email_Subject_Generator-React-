@@ -31,13 +31,6 @@ export default function Output({cetagory ,keyword}) {
 }
   }, [cetagory]);
 
-  // topic.map( (tpc) => {
-  //   let string = tpc.word;
-  //   let Word = string.replace(`{}`,keyword);
-  //   tpc.word=Word;
-  //   console.log("Replaced value: ", Word)
-  // })
-
 
 function loadMore(){
   if((Num<topic.length) && (Num+3<topic.length)){
@@ -69,21 +62,51 @@ console.log(topic.length)
 
   return (
     <div>
-         <div className='container'>
+      {(() => {
 
-              <div>
-                  {topic.slice(NumB,Num).map( (sub,i) => {
-                    return(
-                      <SingleData key={sub.id} {...sub} keyword={keyword}></SingleData>  
-                   )
-                     })
-                  }
-                
-              </div>
-
-              <div className='text-center mt-5'><button className='btn btn-primary' onClick={loadMore}>Load More...</button></div>
+        if (cetagory && keyword) {
+          return (
+            <div>
+              <div className='container'>
+                <div>
+                    {topic.slice(NumB,Num).map( (sub,i) => {
+                      return(
+                        <SingleData key={sub.id} {...sub} keyword={keyword}></SingleData>  
+                    )
+                      })
+                    }     
+                </div>
+                <div className='text-center mt-5'><button className='btn btn-primary' onClick={loadMore}>Load More...</button></div>
+                </div>
             </div>
+          )
+        }else {
+          return (
+            <div className={classes.homePage}> <h1>Find Suitable Email Subject Line for Your Mail................</h1></div>
+          )
+        }
 
+      })()}
     </div>
   )
 }
+
+
+
+
+
+
+{/* <div className='container'>
+
+<div>
+    {topic.slice(NumB,Num).map( (sub,i) => {
+      return(
+        <SingleData key={sub.id} {...sub} keyword={keyword}></SingleData>  
+     )
+       })
+    }
+  
+</div>
+
+<div className='text-center mt-5'><button className='btn btn-primary' onClick={loadMore}>Load More...</button></div>
+</div> */}

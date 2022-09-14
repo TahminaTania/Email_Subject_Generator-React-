@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classes from './Output.module.css';
 import { useState, useEffect,useRef } from 'react';
-import Slider from "react-slick";
+import { match } from 'assert';
 
 
 export default function SingleData({word,id,keyword}) {
@@ -23,8 +23,10 @@ export default function SingleData({word,id,keyword}) {
 if(keyword){
     let string = word;
     let Word = string.replace(`{}`,keyword);
-    let Word1= '<span style="color:black">'+Word+'</span>';
-    word=Word; 
+    string=Word; 
+    word = string.replace(keyword, match => `<span style="color:black;font-weight:lighter;">${match} </span>` );
+   //let Word1= '<span style="color:black">'+Word+'</span>';
+   
     console.log("Replaced value: ", word)
 }
 
@@ -36,12 +38,17 @@ if(keyword){
 
     <div  className='text-center' key={id}> 
                            <div className={classes.title}>
-                           <span ref={sentence}>{word}</span>
+                           <span ref={sentence} dangerouslySetInnerHTML={{__html: word}}></span>
                             <span className={classes.copy} onClick={() => handleClick(id)}>
                               <button onClick={(e) => {navigator.clipboard.writeText(word)}}>{copyText}</button>
                             </span> 
                           </div>
+                          
+      
   </div>
                  
   )
 }
+
+
+// changed color ----->  https://stackoverflow.com/questions/54562124/how-to-add-color-to-a-specific-part-of-a-string-in-react-using-replace
