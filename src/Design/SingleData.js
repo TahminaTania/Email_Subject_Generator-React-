@@ -38,11 +38,11 @@ if(keyword){
 
     <div  className='text-center' key={id}> 
                            <div className={classes.title}>
-                           <span ref={sentence} dangerouslySetInnerHTML={{__html: word}}></span>
-                            <span className={classes.copy} onClick={() => handleClick(id)}>
-                              <button onClick={(e) => {navigator.clipboard.writeText(word)}}>{copyText}</button>
-                            </span> 
-                          </div>
+                           
+                          
+                              <span ref={sentence} dangerouslySetInnerHTML={{__html: word}}></span>
+                              <span className={classes.copy} onClick={(e) => {navigator.clipboard.writeText(word)}}><span onClick={() => handleClick(id)}>{copyText}</span></span> 
+                            </div>
                           
       
   </div>

@@ -9,6 +9,9 @@
     line-height: 40px;
     margin: 10px;
     border:1px solid rgb(95, 94, 94);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
 .copy{
@@ -17,13 +20,17 @@
     background-color:white;
     color:rgb(126, 31, 214);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* margin-top: 5px; */
 }
-.copy button{
+.copy span{
     background-color:white;
     color:rgb(126, 31, 214);
     font-weight: bold;
     border: none;
+
 }
 .repalced_word{
     color:black;
