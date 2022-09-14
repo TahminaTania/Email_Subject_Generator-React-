@@ -7,6 +7,7 @@ import { Point,Benefit, Necessity } from './data';
 import SingleData from './SingleData';
 
 
+
 export default function Output({cetagory ,keyword}) {
   const [topic,SetTopic] =useState(Point);
 
@@ -82,7 +83,11 @@ console.log(topic.length)
           )
         }else {
           return (
-            <div className={classes.homePage}> <h1>Find Suitable Email Subject Line for Your Mail................</h1></div>
+            <div className={classes.homePage}> 
+            <h1>Find Suitable Email Subject Line for Your Mail................</h1>
+         
+            </div>
+            
           )
         }
 
