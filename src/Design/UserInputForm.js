@@ -3,32 +3,28 @@ import classes from './UserInputForm.module.css';
 import { useState,useEffect,useRef } from 'react';
 import Output from './Output';
 import { Point,Benefit, Necessity } from './data';
+import SimpleSlider from './Output';
 
 
 
 export default function UserInputForm(props) {
   const [keyword,SetKeyWord] =useState();
-  const [cetagory,SetCetagory] =useState(Point);
+  const [cetagory,SetCetagory] =useState('');
   const [color,Setcolor] =useState('red');
+ 
+  
+  
+
 
 
 
   let Sentences =(e)=>{
-    e.preventDefault(); 
-    //  SetCetagory(cetagory);
-     
-        // console.log('chatagory value is:', cetagory);
-        //console.log('Sentence value is:', keyword);
+    e.preventDefault();
 
-          // if(cetagory=== 'Benefit'){
-          //   SetCetagory(Benefit)
-          // }
-          // else if(cetagory=== 'Necessity'){
-          //   SetCetagory(Necessity)
-          // }
-          // else{
-          //   SetCetagory(Point)
-          // }
+        //  console.log('chatagory value is:', cetagory);
+        //  console.log('Sentence value is:', keyword);
+
+  
 
 
     }
@@ -53,7 +49,9 @@ export default function UserInputForm(props) {
             
                       <div className="col-md-4">
                         <label className="form-label mt-4">Choose Category</label> 
-                          <select className="form-select" value={cetagory} onChange={(e) => SetCetagory(e.target.value)} >
+                          <select className="form-select" 
+                          value={cetagory} 
+                          onChange={(e) => SetCetagory(e.target.value)} >
                             <option value="0">Topic</option>
                             <option value="Benefit">Benefit</option>
                             <option value="Point">Pin Point</option>
@@ -66,7 +64,8 @@ export default function UserInputForm(props) {
                           <label className="form-label mt-4">Enter KeyWord</label> 
                           <input type="text" className="form-control"  placeholder="Lead-generation"  
                           onChange={(e) => SetKeyWord(e.target.value)}
-                          value={keyword}/> 
+                          value={keyword}
+                          /> 
                         </div>
                         <div className="col-md-2">
                           <div className='mt-5'></div> 
@@ -83,6 +82,7 @@ export default function UserInputForm(props) {
         <div className='mb-5'>
         </div>
         <div className='col-md-8 offset-2 mt-5'>
+          
           <Output keyword={keyword} cetagory={cetagory}/>
         </div>
 
@@ -91,4 +91,5 @@ export default function UserInputForm(props) {
 }
 
 
-//
+//onChange={(e) => SetKeyWord(e.target.value)}
+//onChange={(e) => SetCetagory(e.target.value)}

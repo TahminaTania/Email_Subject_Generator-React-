@@ -4,13 +4,19 @@ import id from './Output.module.css';
 import UserInputForm from './UserInputForm';
 import { useState, useEffect,useRef } from 'react';
 import { Point,Benefit, Necessity } from './data';
+import SingleData from './SingleData';
+
 
 export default function Output({cetagory ,keyword}) {
   const [topic,SetTopic] =useState(Point);
-  const [color,Setcolor] =useState('red');
 
-  console.log("Recieved keyword: ",keyword)
-  console.log("Recieved category: ",cetagory)
+  const [color,Setcolor] =useState('red');
+  const textAreaRef =useRef(null);
+  const [Num,SetN]=useState(3);
+  const [NumB,SetNB]=useState(0);
+
+  // console.log("Recieved keyword: ",keyword)
+  // console.log("Recieved category: ",cetagory)
   
 
   useEffect(() => {
@@ -25,65 +31,56 @@ export default function Output({cetagory ,keyword}) {
 }
   }, [cetagory]);
 
-  // useEffect((e) => {
-  //   topic.map(topic => {
-    
-  //     const string = topic.word;
-  //     // let Word = string.replace(`{}`,keyword);
-  //     const newText = string.replace( `{}`, `<span className={classes.repalced_word}>${keyword}</span>`
-  //        );
-  //     topic.word=newText;
-  //     console.log("Replaced value: ", newText)
-  //   });
-
-  // },[keyword]);
-
-  topic.map( (tpc) => {
-    let string = tpc.word;
-    let Word = string.replace(`{}`,keyword);
-    tpc.word=Word;
-    console.log("Replaced value: ", Word)
-  })
+  // topic.map( (tpc) => {
+  //   let string = tpc.word;
+  //   let Word = string.replace(`{}`,keyword);
+  //   tpc.word=Word;
+  //   console.log("Replaced value: ", Word)
+  // })
 
 
+function loadMore(){
+  if((Num<topic.length) && (Num+3<topic.length)){
+    SetNB(NumB+3);
+    SetN(Num+3);
+    console.log("firstone")
+  }
+  else if(Num==topic.length){
+    SetN(3)
+    SetNB(0)
+    console.log("2one")
+  }
+  else if(Num+3>topic.length){
+    SetNB(topic.length-3);
+    SetN(topic.length);
+   console.log("3one")
+  }
 
+console.log(NumB)
+console.log(Num)
+console.log(topic.length)
+}
+  
+
+ 
 
   return (
     <div>
          <div className='container'>
-           
-              <div>
-                  {topic.map( sub => {
 
+              <div>
+                  {topic.slice(NumB,Num).map( (sub,i) => {
                     return(
-                   <div  className='text-center' id={id.title}> 
-                     <span key={sub.id}>{sub.word}</span>
-                     <span className={classes.copy} >
-                       <button >Copy</button>
-                     </span>
-                  
-                   </div>
+                      <SingleData key={sub.id} {...sub} keyword={keyword}></SingleData>  
                    )
                      })
                   }
                 
               </div>
+
+              <div className='text-center mt-5'><button className='btn btn-primary' onClick={loadMore}>Load More...</button></div>
             </div>
 
     </div>
   )
 }
-
-
-// {cetagory.map( sub => {
-//   return(
-//  <div  className='text-center' id={id.title}> 
-//    <span key={sub.id}>{sub.word}</span>
-//    <span className={classes.copy} >
-//      <button >Copy</button>
-//    </span>
-
-//  </div>
-//  )
-//    })
-// }
