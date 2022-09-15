@@ -73,7 +73,7 @@ export default function UserInputForm(props) {
                         <div className="col-md-2">
                           <div className='mt-5'></div>
                           <div className={classes.sbmtBtn}>
-                            <button type="submit" className="btn btn-primary btn"  onClick={Sentences} >Generate</button>
+                            <button type="submit" className={classes.Pbutton}  onClick={Sentences} >Generate</button>
                           </div>
                           
                         </div>

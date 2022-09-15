@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
+.outputPage{
+    margin-top: 100px;
+}
 .title{
     background-color:rgba(171, 104, 233, 0.836);
     color: white;
@@ -53,4 +57,14 @@
 .homePage h1{
     color:Black;
     padding: 30px;
+}
+
+.Pbutton{
+    background-color:blue;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 05px 10px;
 }

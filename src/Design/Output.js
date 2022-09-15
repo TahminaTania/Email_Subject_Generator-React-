@@ -67,7 +67,7 @@ console.log(topic.length)
 
         if (cetagory && keyword) {
           return (
-            <div>
+            <div className={classes.outputPage}>
               <div className='container'>
                 <div>
                     {topic.slice(NumB,Num).map( (sub,i) => {
@@ -77,7 +77,7 @@ console.log(topic.length)
                       })
                     }     
                 </div>
-                <div className='text-center mt-5'><button className='btn btn-primary' onClick={loadMore}>Load More...</button></div>
+                <div className='text-center mt-5'><button className={classes.Pbutton} onClick={loadMore}>Generate More...</button></div>
                 </div>
             </div>
           )

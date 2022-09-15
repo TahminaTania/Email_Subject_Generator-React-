@@ -3,31 +3,31 @@ import React from 'react';
 export const Benefit= [
     {
         "id": 1,
-        "word": "This is first {} Benefit"
+        "word": "The ultimate guide to {}"
     },
     {
         "id": 2,
-        "word": "This is second {} Benefit "
+        "word": "This might be the best way to get {} "
     },
     {
         "id": 3,
-        "word": "This is Third {} Benefit "
+        "word": "The uncomfortable truth about {} "
     },
     {
         "id": 4,
-        "word": "This is Fourth {} Benefit "
+        "word": "Why {} is not good"
     },
     {
         "id": 5,
-        "word": "This is Sixth {} Benefit "
+        "word": "How you can get {} almost instantly "
     },
     {
         "id": 6,
-        "word": "This is Seventh {} Benefit "
+        "word": "100 Benefits of {} "
     },
     {
         "id": 7,
-        "word": "This is Eight {} Benefit "
+        "word": "4 questions answered about {} "
     }
 
 
@@ -36,69 +36,69 @@ export const Benefit= [
 export const Necessity=[
     {
         "id": 1,
-        "word": "This is first {} Necessity"
+        "word": "The Necessity of {}'s in Your life"
     },
     {
         "id": 2,
-        "word": "This is second {} Necessity "
+        "word": "If you're struggling with {}, you're not alone"
     },
     {
         "id": 3,
-        "word": "This is Third {} Necessity "
+        "word": "Can I make your life 20% easier with {} ? "
     },
     {
         "id": 4,
-        "word": "This is Fourth {} Necessity "
+        "word": "Could your startup use some help with {} ? "
     },
     {
         "id": 5,
-        "word": "This is Fifth {} Necessity "
+        "word": "Are you making these mistakes?"
     },
     {
         "id": 6,
-        "word": "This is Sixth {} Necessity "
+        "word": "Key challenges with {}"
     },
     {
         "id": 7,
-        "word": "This is Seventh {} Necessity "
+        "word": "Leave {} hell behind for good "
     },
     {
         "id": 8,
-        "word": "This is Eight {} Necessity "
+        "word": "Are you the right person to speak to about lead? "
     },
     {
         "id": 9,
-        "word": "This is Ninth {} Necessity "
+        "word": "Don’t let lead cripple your business"
     }
 ]
 
 export const Point=[
     {
         "id": 1,
-        "word": "This is first {} Point"
+        "word": "The secret to fixing {}"
     },
     {
         "id": 2,
-        "word": "This is second {} Point"
+        "word": "How to fix {} like a boss"
     },
     {
         "id": 3,
-        "word": "This is Third {} Point"
+        "word": "Never suffer from {} again"
     },
     {
         "id": 4,
-        "word": "This is Fourth {} Point"
+        "word": "Answered: your most burning questions about {} NOW!"
     },
     {
         "id": 5,
-        "word": "This is Fifth {} Point"
+        "word": "How to permanently stop {} (even if you've tried everything)"
     },
     {
         "id": 6,
-        "word": "This is Sixth {} Point"
+        "word": "15 things you didn't know about {}"
     },
     {
         "id": 7,
-        "word": "This is Seventh {} Point"
+        "word": "The uncomfortable truth about{}"
     },
 ]
